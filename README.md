@@ -1,4 +1,4 @@
-![Runixeer Icon](runixeer.png)
+![Runixeer Icon](assets/runixeer.png)
 # Runixeer
 
 Welcome to **Runixeer** – a powerful and flexible alternative to macOS's Finder, crafted specifically for GNU/Linux systems using Rust! 🚀
