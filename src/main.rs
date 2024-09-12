@@ -193,8 +193,7 @@ impl PluginManager {
         }
     }
     pub fn start_enabled_plugins(&self) -> Result<(), Box<dyn Error>> {
-        for plugin in self.enabled_plugins.clone() {
-        }
+        for plugin in self.enabled_plugins.clone() {}
         todo!()
     }
     pub fn start_default_plugin(&self) -> Result<(), Box<dyn Error>> {
@@ -225,7 +224,10 @@ fn main() {
         std::fs::read_to_string(configuration_path).expect("Could not read configuration file:");
     let configuration: Configuration = ron::from_str(&configuration_file_contents)
         .expect("Could not parse the configuration file:");
-    let pluginmanager = PluginManager::from_configuration(configuration).expect("Could not instantiate Plugin Manager via configuration file.");
-    pluginmanager.start_enabled_plugins().expect("Could not start the enabled plugins.");
+    let pluginmanager = PluginManager::from_configuration(configuration)
+        .expect("Could not instantiate Plugin Manager via configuration file.");
+    pluginmanager
+        .start_enabled_plugins()
+        .expect("Could not start the enabled plugins.");
     todo!()
 }
