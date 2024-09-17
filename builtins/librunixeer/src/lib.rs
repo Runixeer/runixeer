@@ -7,7 +7,7 @@ pub struct ListItem {
     pub subitems: Option<Vec<SubListItem>>,
 }
 
-#[derive(Debug,Deserialize,Serialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct SubListItem {
     pub index: u64,
     pub name: String,
@@ -34,4 +34,15 @@ impl SubListItem {
     pub fn new(index: u64, name: String) -> SubListItem {
         SubListItem { index, name }
     }
+}
+
+#[derive(Debug, Default, Deserialize, Serialize)]
+pub enum Action {
+    /// Comes from the runixeer
+    #[default]
+    GetList,
+    /// Comes from the plugin.
+    Refresh,
+    /// Comes from the either the plugin or runixeer
+    Exit,
 }
